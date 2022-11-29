@@ -60,15 +60,15 @@ function colorChange(e)
 
 function defaultActions(e)
 {
-    document.execCommand(e);
+    document.execCommand(e,false);
 }
 
-function execbold(sender)
-{   
-    alert(btns.length);       
-    let comando = sender.dataset.action;
-    document.execCommand(comando);
-}
+// function execbold(sender)
+// {   
+//     alert(btns.length);       
+//     let comando = sender.dataset.action;
+//     document.execCommand(comando);
+// }
 
 
 
