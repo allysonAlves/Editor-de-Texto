@@ -36,7 +36,7 @@ html,body{
 
 .editorArea{
     margin-top: 20px;
-    width: 100vw;    
+    width: 100%;    
     align-items: center;
     display: flex;
     flex-direction: row;    
