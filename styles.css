@@ -16,8 +16,8 @@ html,body{
 }
 
 .localtext{
-    width: 40%;
-    height: 85vh;
+    width: 700px;
+    height: 800px;
     border: 1px solid black;    
     padding: 25px;
     min-height: 40vh;        
