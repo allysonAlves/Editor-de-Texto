@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="toolbar">
+        <button data-action="bold">B</button>
+        <button data-action="italic"><i>I</i></button>
+        <button data-action="export-word">.docx</button>
+        <button data-action="export-pdf">PDF</button>
+        <input onchange="colorChange(this)" type="color"/>
+        <input id="sizevisual" type="number"/>
+        <button data-action="titulo"><b>Titulo</b></button>
+    </div>
+    
+    
+    <div class="editorArea">
+        <div class="localtext" id="localtextid" onkeydown="keydownFunction()" contenteditable=""></div>
+    </div>
+    
+
+    </div>
+
+    <div class="statusbar"><span class="countwords">0</span> Words</div>
+ 
+
+    <script src="index.js"/>   
+       
+
+   
+</body>
+</html>
