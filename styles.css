@@ -16,7 +16,7 @@ html,body{
 }
 
 .localtext{
-    width: 90vw;
+    width: 80vw;
     height: 800px;
     border: 1px solid black;    
     padding: 25px;
@@ -36,7 +36,7 @@ html,body{
 
 .editorArea{
     margin-top: 20px;
-    width: 100%;    
+    width: 100vw;    
     align-items: center;
     display: flex;
     flex-direction: row;    
