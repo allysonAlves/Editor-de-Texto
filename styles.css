@@ -16,6 +16,10 @@ html,body{
     box-shadow: 0 0 2px rgb(94, 94, 94);
 }
 
+.toolbar input { 
+    width: 35px;
+}
+
 .localtext{
     width: 80vw;
     height: 800px;
