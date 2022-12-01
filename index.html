@@ -15,7 +15,17 @@
         <button data-action="export-word">.docx</button>
         <button data-action="export-pdf">PDF</button>
         <input onchange="colorChange(this)" type="color"/>
-        <input id="sizevisual" type="number"/>
+        
+        <select class="inputSize" name="select">
+            <option value="10">10</option>
+            <option value="13">13</option>
+            <option value="16" selected>16</option>
+            <option value="18">18</option>
+            <option value="24">24</option>
+            <option value="32">32</option>
+            <option value="48">48</option>
+        </select>
+        
         <button data-action="titulo"><b>Titulo</b></button>
     </div>
     

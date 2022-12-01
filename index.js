@@ -1,4 +1,7 @@
 const btns = document.getElementsByTagName("button");
+const inputSize = document.getElementsByClassName("inputSize");
+const countwords = document.getElementsByClassName("countwords");
+const texteditor = document.getElementsByClassName("localtext");
 
 for(let i = 0; i < btns.length; i++) {
     let button = btns[i];
@@ -7,17 +10,63 @@ for(let i = 0; i < btns.length; i++) {
 }
 
 document.addEventListener('selectionchange', () => {
+
+    inputSize[0].value = GetFontSelectionSize().replace("px",""); 
+    
+});
+
+inputSize[0].addEventListener("change", (e) => {
+    document.execCommand("fontSize",false,convertSizeToCommandSize(e.target.value));    
+});
+
+function GetFontSelectionSize()
+{
     const selection = window.getSelection();
     if (selection) { // make sure it doesn't error if nothing is selected
      const size = window.getComputedStyle(selection.anchorNode.parentElement, null).getPropertyValue('font-size');
 
-     document.getElementById("sizevisual").value = size.replace("px","");
+          
+     return size;
+    }
 
-     }
-});
+}
 
-const countwords = document.getElementsByClassName("countwords");
-const texteditor = document.getElementsByClassName("localtext");
+function convertSizeToCommandSize(size)
+{
+    switch(size)
+     {
+        case "10":
+            return 1;
+        break;
+
+        case "13":
+            return 2;
+        break;
+
+        case "16":
+            return 3;
+        break;
+
+        case "18":
+            return 4;
+        break;
+
+        case "24":
+            return 5;
+        break;
+
+        case "32":
+            return 6;
+        break;
+
+        case "48":
+            return 7;
+        break;
+    }
+
+}
+
+
 
 function keydownFunction(e){
     setTimeout(() => {
@@ -40,8 +89,7 @@ function setModification(e)
             colorChange(e);
             break;
         case "titulo":
-            defaultActions("justifyCenter");
-            document.execCommand("formatBlock",false,"h1");
+            defineTitleStyle();
             break;
         default:
             defaultActions(data);
@@ -49,7 +97,20 @@ function setModification(e)
     }
 }
 
+function defineTitleStyle()
+{
+    const selection = window.getSelection();
+    if (selection) { // make sure it doesn't error if nothing is selected
+        defaultActions("justifyCenter");
+        document.execCommand("formatBlock",false,"h1");
+        const size = selection.anchorNode.parentElement.style.textTransform = "capitalize";
 
+        
+     
+     //getPropertyValue('text-transform');
+
+    }
+}
 
 
 function colorChange(e)
@@ -62,13 +123,6 @@ function defaultActions(e)
 {
     document.execCommand(e,false);
 }
-
-// function execbold(sender)
-// {   
-//     alert(btns.length);       
-//     let comando = sender.dataset.action;
-//     document.execCommand(comando);
-// }
 
 
 
